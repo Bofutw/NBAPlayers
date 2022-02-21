@@ -15,7 +15,6 @@ import Paper from '@mui/material/Paper';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { blue, green, purple, white } from '@mui/material/colors';
-import Dropdownbar from '../Navbar/DropDownBar'
 import { useState } from 'react';
 import Crudmem2 from './Crudmem2'
 import { useEffect } from 'react';
@@ -199,7 +198,6 @@ const [playersDetail, setPlayersDetail] = useState(false);
                     
                   }}
                 >
-                  {/*{playersDetail==true?alert('error'):<Crudmem2 detail={playersDetail} setdetail={setPlayersDetail}></Crudmem2>} */}
                <Crudmem2></Crudmem2>
                 </Paper>
               </Grid>

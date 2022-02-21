@@ -174,7 +174,7 @@ export default function EnhancedTable() {
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [rowsPerPage, setRowsPerPage] = React.useState(15);
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -350,7 +350,7 @@ const emptyRows =
   >
     {
     allteam2.map((res,index)=>{
-      return <MenuItem key={index} value={res.team_acronym}> {res.team_name} </MenuItem>;
+      return <MenuItem  key={index} value={res.team_acronym}> {res.team_name} </MenuItem>;
     })
     }
     
@@ -414,7 +414,7 @@ const emptyRows =
                       <TableCell align="right">{row.assists_per_game}</TableCell>
                       <TableCell align="right">{row.steals_per_game}</TableCell>
                       <TableCell align="right">{row.blocks_per_game}</TableCell>
-                      <TableCell align="right"><SearchIcon onClick={()=>{ window.localStorage.array=`["${row.team_acronym}","${row.name}"]` ;setDetail(true); }}></SearchIcon></TableCell>
+                      <TableCell align="right"><SearchIcon sx={{cursor: 'pointer'}} onClick={()=>{ window.localStorage.array=`["${row.team_acronym}","${row.name}"]` ;setDetail(true); }}></SearchIcon></TableCell>
                     </TableRow>
                   );
                 })}
@@ -431,7 +431,7 @@ const emptyRows =
           </Table>
           </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
+          rowsPerPageOptions={[15]}
           component="div"
           count={data1.length}
           rowsPerPage={rowsPerPage}
