@@ -1,13 +1,10 @@
-
 import React, { useCallback } from "react";
 import axios from 'axios'
 import { useEffect,useState } from 'react';
-import Typography from '@mui/material/Typography';
 import { PieChart, Pie, Sector, Cell } from "recharts";
 import { blue, green, grey, purple, red } from "@mui/material/colors";
 
-const url = 'http://localhost:3001/chart'
-
+const url = 'http://localhost:9999/chart'
 
 export default function Areachart() {
 
@@ -44,15 +41,10 @@ export default function Areachart() {
     console.log(data.name);
     return data.teamname +"："+ data.count + "位"
   }
-  
   const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", grey[500], red[300],purple[200]];
-  
-  const RADIAN = Math.PI / 180;
-  
 
   return (
       <>
-     
       <PieChart width={800} height={300}>
       <Pie
         data={data}

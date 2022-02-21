@@ -99,9 +99,6 @@ const mdTheme = createTheme({
     }
   },
 });
-
-
-
 function DashboardContent() {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
@@ -202,7 +199,6 @@ const [playersDetail, setPlayersDetail] = useState(false);
                 </Paper>
               </Grid>
             </Grid>
-           
           </Container>
         </Box>
       </Box>

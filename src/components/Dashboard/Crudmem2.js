@@ -29,7 +29,6 @@ import TextField from '@mui/material/TextField';
 import {zhTW} from '@mui/material/locale';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Playerchart from './Playerchart'
-import { useRef } from 'react';
 
 const allteam2 = [{"team_acronym":"all","team_name":"ALL"},{"team_acronym":"min","team_name":"Minnesota Timberwolves"},{"team_acronym":"orl","team_name":"Orlando Magic"},{"team_acronym":"bos","team_name":"Boston Celtics"},{"team_acronym":"por","team_name":"Portland Trail Blazers"},{"team_acronym":"ind","team_name":"Indiana Pacers"},{"team_acronym":"uth","team_name":"Utah Jazz"},{"team_acronym":"pho","team_name":"Phoenix Suns"},{"team_acronym":"okc","team_name":"Oklahoma City Thunder"},{"team_acronym":"lal","team_name":"Los Angeles Lakers"},{"team_acronym":"tor","team_name":"Toronto Raptors"},{"team_acronym":"bro","team_name":"Brooklyn Nets"},{"team_acronym":"phi","team_name":"Philadelphia 76ers"},{"team_acronym":"det","team_name":"Detroit Pistons"},{"team_acronym":"gsw","team_name":"Golden State Warriors"},{"team_acronym":"mem","team_name":"Memphis Grizzlies"},{"team_acronym":"cle","team_name":"Cleveland Cavaliers"},{"team_acronym":"nor","team_name":"New Orleans Pelicans"},{"team_acronym":"chi","team_name":"Chicago Bulls"},{"team_acronym":"dal","team_name":"Dallas Mavericks"},{"team_acronym":"lac","team_name":"Los Angeles Clippers"},{"team_acronym":"mia","team_name":"Miami Heat"},{"team_acronym":"hou","team_name":"Houston Rockets"},{"team_acronym":"sac","team_name":"Sacramento Kings"},{"team_acronym":"was","team_name":"Washington Wizards"},{"team_acronym":"sas","team_name":"San Antonio Spurs"},{"team_acronym":"cha","team_name":"Charlotte Hornets"},{"team_acronym":"nyk","team_name":"New York Knicks"},{"team_acronym":"den","team_name":"Denver Nuggets"},{"team_acronym":"atl","team_name":"Atlanta Hawks"},{"team_acronym":"mil","team_name":"Milwaukee Bucks"}]
 
@@ -234,7 +233,7 @@ const emptyRows =
         
         if(data2==""){
         try {
-          const res = await (await axios.get("http://localhost:3001/players/"+team)).data;
+          const res = await (await axios.get("http://localhost:9999/players/"+team)).data;
           setData1(res);
         } catch (error) {
           console.log(error);
@@ -242,11 +241,11 @@ const emptyRows =
       }else{
         try {   
           if(team!='all' && team!=""){
-          const res = await (await axios.get("http://localhost:3001/players/"+team+"/"+data2)).data;
+          const res = await (await axios.get("http://localhost:9999/players/"+team+"/"+data2)).data;
         
           setData1(res);
         }else {
-          const res = await (await axios.get("http://localhost:3001/search/all/"+data2)).data;
+          const res = await (await axios.get("http://localhost:9999/search/all/"+data2)).data;
          
           setData1(res);
         }
@@ -261,7 +260,7 @@ const emptyRows =
     
     useEffect(()=>{
       async function fetchapiFirst(){
-      const res = await (await axios.get("http://localhost:3001/players/all")).data;
+      const res = await (await axios.get("http://localhost:9999/players/all")).data;
       setData1(res);
       }
       fetchapiFirst();
@@ -284,7 +283,7 @@ const emptyRows =
           temp = JSON.parse(window.localStorage.array);
           
          
-          const res2 = await (await axios.get("http://localhost:3001/players/"+temp[0]+"/"+temp[1])).data;
+          const res2 = await (await axios.get("http://localhost:9999/players/"+temp[0]+"/"+temp[1])).data;
           setPlayersDetail(res2)
           
         } catch (error) {
@@ -301,7 +300,7 @@ const emptyRows =
     {detail==true?
     <ThemeProvider theme={mdTheme}>
     <Box sx={{ width: '100%' }}>
-    <Paper sx={{ width: '100%',height:'550px', mb: 2 }}>
+    <Paper sx={{ width: '100%',height:'auto', mb: 2 }}>
     <AccountCircleIcon fontSize='large'></AccountCircleIcon> {playersDetail[0].name} <hr align="left" width='30%'></hr>
 <div style={{marginLeft:'20px'}}>
 {"Team： "+playersDetail[0].team_acronym}<br></br>
@@ -325,11 +324,6 @@ const emptyRows =
 {"Turnovers： "+playersDetail[0].turnovers_per_game}<br></br>
 {"Efficiency： "+playersDetail[0].player_efficiency_rating}<br></br>
 </div>  
-    {/* {
-       Object.keys(playersDetail[0]).map((res)=>{
-        return res
-      })
-    } */}
     </Paper>
     </Box>
     </ThemeProvider>
@@ -364,7 +358,7 @@ const emptyRows =
       <Button onClick={handleSent} variant="outlined" sx={{marginX:'45%',marginY:'4%'}}>Search</Button>
     </Paper>
 
-    <button style={{marginLeft:'90%'}} onClick={newChart}>Show Charts</button>
+    <button style={{marginLeft:'87%'}} onClick={newChart}>Show Charts</button>
       <Paper sx={{ width: '100%', mb: 2 }}>
       
         
