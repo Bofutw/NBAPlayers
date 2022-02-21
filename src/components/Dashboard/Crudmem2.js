@@ -194,7 +194,6 @@ export default function EnhancedTable() {
     if (event.target.checked) {
       const newSelecteds = data1.map((n) => n.name);
       setSelected(newSelecteds);
-      console.log(newSelecteds);
       
       return;
     }
@@ -238,7 +237,7 @@ const emptyRows =
 
     
     const handleSent = ()=>{
-      alert(team)
+      setPage(0);
       async function fetchapi2() {
         
         if(data2==""){
@@ -252,11 +251,11 @@ const emptyRows =
         try {   
           if(team!='all' && team!=""){
           const res = await (await axios.get("http://localhost:3001/players/"+team+"/"+data2)).data;
-          console.log(res);
+        
           setData1(res);
         }else {
           const res = await (await axios.get("http://localhost:3001/search/all/"+data2)).data;
-          console.log(res);
+         
           setData1(res);
         }
         } catch (error) {
@@ -265,13 +264,12 @@ const emptyRows =
       }
     }
       fetchapi2();
-      /* console.log(data1.length); */
+      
     };
     
     useEffect(()=>{
       async function fetchapiFirst(){
       const res = await (await axios.get("http://localhost:3001/players/all")).data;
-      console.log(res);
       setData1(res);
       }
       fetchapiFirst();
@@ -292,13 +290,9 @@ const emptyRows =
         try {
           let temp = [];
           temp = JSON.parse(window.localStorage.array);
-          console.log(temp)
-          console.log(typeof(temp))
-          /* console.log("1:"+searchName[0]);
-          console.log("2:"+searchName[1]); */
+          
          
           const res2 = await (await axios.get("http://localhost:3001/players/"+temp[0]+"/"+temp[1])).data;
-          console.log(res2);
           setPlayersDetail(res2)
           
         } catch (error) {
@@ -307,12 +301,7 @@ const emptyRows =
       }
       fetchapi3();
     },[detail])
-    /*   
-      const Searchfn = (event)=>{
-      console.log(event);
-      setDetail(true)
-    } 
-    */
+   
     
     
   return (
