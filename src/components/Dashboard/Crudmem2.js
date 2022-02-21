@@ -233,7 +233,7 @@ const emptyRows =
         
         if(data2==""){
         try {
-          const res = await (await axios.get("http://localhost:3001/players/"+team)).data;
+          const res = await (await axios.get("http://localhost:9999/players/"+team)).data;
           setData1(res);
         } catch (error) {
           console.log(error);
@@ -283,7 +283,7 @@ const emptyRows =
           temp = JSON.parse(window.localStorage.array);
           
          
-          const res2 = await (await axios.get("http://localhost:3001/players/"+temp[0]+"/"+temp[1])).data;
+          const res2 = await (await axios.get("http://localhost:9999/players/"+temp[0]+"/"+temp[1])).data;
           setPlayersDetail(res2)
           
         } catch (error) {
