@@ -9,33 +9,18 @@ import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems, secondaryListItems } from './listItems';
-import Chart from './Chart';
-import Deposits from './Deposits';
-import Orders from './Orders';
 import { blue, green, purple, white } from '@mui/material/colors';
 import Dropdownbar from '../Navbar/DropDownBar'
 import { useState } from 'react';
-import Areachart from './Areachart';
-import Agechart from './Agechart'
-import { height, margin, padding } from '@mui/system';
-import Githubapi from './Githubapi';
-import Clone from './Clone';
-import Depositsgit from './Depositsgit'
-import Githubapiall from './Githubapiall';
-import Cloneweek from './Cloneweek'
-import Crudmember from './Crudmember'
-import Crudmem from './Crudmem'
 import Crudmem2 from './Crudmem2'
 import { useEffect } from 'react';
+import { mainListItems, secondaryListItems } from './listItems';
+import Link from '@mui/material/Link';
 
 function Copyright(props) {
   return (
