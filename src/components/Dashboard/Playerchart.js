@@ -14,7 +14,7 @@ export default function Areachart() {
       method: 'get',
       url: url
     });
-    console.log(res);
+    
     let newRes = [];
     
     res.data.map((resNext,index)=>{
@@ -22,7 +22,7 @@ export default function Areachart() {
        newRes.push(resNext);
       }
     })
-    console.log(newRes);
+  
     setData(newRes)
   
     } catch (error) {
@@ -33,12 +33,9 @@ export default function Areachart() {
   const [data, setData] = useState([])
   useEffect(() => {
     fetchapi();
-    console.log(data);
-    
   }, [])
 
   let renderLabel = function(data) {
-    console.log(data.name);
     return data.teamname +"："+ data.count + "位"
   }
   const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", grey[500], red[300],purple[200]];
