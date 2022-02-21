@@ -209,7 +209,7 @@ const [detail, setDetail] = useState(false);
 const [searchName, setSearchName] = useState([]);
 const [playersDetail, setPlayersDetail] = useState([]);
 const [open, setOpen] = React.useState(false);
-const reftest = useRef([]);
+
 
 
 const emptyRows =
