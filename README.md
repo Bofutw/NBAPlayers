@@ -1,6 +1,7 @@
 # NBA球員資料庫
 > 以Node.js作為後端框架提供RESTfulAPI，將資料以JSON風格傳送到網頁呈現；前端部分以ReactJS開發，實現基本查詢、選擇、搜尋、以及圖表功能。
 
+![](public/readme.png)
 
 ## Installation
 > 請搭配NBABackend專案以及其中的.sql一同使用
@@ -44,4 +45,7 @@ npm start
 ## Contact
 
 Bofu – [@CakeResume](https://www.cakeresume.com/bofuchen) – bofusoci@gmail.com
+
+
+
 
