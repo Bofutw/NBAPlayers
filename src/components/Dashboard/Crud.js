@@ -26,7 +26,7 @@ function Copyright(props) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="http://localhost:3001/">
-        <b>LnData</b>
+        <b>Bofu</b>
       </Link>{' '}
       {'Since 2021 - '}
       {new Date().getFullYear()}
@@ -135,15 +135,16 @@ const [playersDetail, setPlayersDetail] = useState(false);
               <MenuIcon />
               
             </IconButton>
-            <img src='https://www.lndata.com/images/logo/logo_160.png'></img>
+            <img width='40px'src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1920px-React-icon.svg.png"></img>
+           
             <Typography
               component="h1"
-              variant="h5"
-              color="white"
+              variant="h6"
+              color="black"
               noWrap
-              sx={{ flexGrow: 1 }}
+              sx={{marginLeft:'30px' }}
             >
-            
+          NBA Players Search
             </Typography>
            {/*  <IconButton color="usewhite" >
               <Badge badgeContent={4} color="neutral">
